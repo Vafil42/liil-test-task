@@ -26,7 +26,6 @@ export class Node {
     if (param.head === null) {
       const child = new Node(param);
       this.childs.push(child);
-      console.log("Fuck");
       return 1;
     }
 
@@ -51,12 +50,13 @@ export class Node {
 
   recursiveGetHtml = () => {
     return `<div class="node${this.head ? "" : " without_margin"}">
-      ${this.name
-        ? `<div class="node_content">
+      ${
+        this.name
+          ? `<div class="node_content">
           <span> ${this.name}</span>&nbsp
           ${this.price === 0 ? "" : `<span>(${this.price})</span>`}
         </div >`
-        : ""
+          : ""
       }
       ${this.childs.map((child) => child.recursiveGetHtml()).join("")}
     </div > `;
