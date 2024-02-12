@@ -1,0 +1,15 @@
+{
+  "name": "liil-test-task",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "Daniil Kozenkov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

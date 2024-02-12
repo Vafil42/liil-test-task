@@ -1,0 +1,14 @@
+.node {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.node_content {
+  display: flex;
+  flex-direction: row;
+}
+
+.without_margin {
+  margin: 0px;
+}
