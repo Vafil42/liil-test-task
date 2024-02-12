@@ -23,6 +23,10 @@ export class Node {
   };
 
   recursiveAddChild = (param) => {
+    if (this.node === 0) {
+      return 0;
+    }
+
     if (param.head === null) {
       const child = new Node(param);
       this.childs.push(child);
@@ -35,17 +39,13 @@ export class Node {
       return 1;
     }
 
-    if (this.node === 0) {
-      return 0;
+    for (let child of this.childs) {
+      if (child.recursiveAddChild(param) === 1) {
+        return 1;
+      }
     }
 
-    const result = this.childs.map((child) => child.recursiveAddChild(param));
-
-    if (result.indexOf(1) < 0) {
-      return 0;
-    }
-
-    return 1;
+    return 0;
   };
 
   recursiveGetHtml = () => {
